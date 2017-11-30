@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Products>
+    <Product id="4322331" ProductName="Синяя толстовка" ProductImage="/src/img/cloth1.jpg" ProductCost="400" ProductLink="(url перехода на страницу товара)"/>
+    <Product id="4322332" ProductName="Корраловый джемпер" ProductImage="/src/img/cloth2.jpg" ProductCost="600" ProductLink="(url перехода на страницу товара)"/>
+    <Product id="4322333" ProductName="Джемпер в полоску" ProductImage="//src/img/cloth3.jpg" ProductCost="750" ProductLink="(url перехода на страницу товара)"/>
+    <Product id="4322334" ProductName="Синий джемпер" ProductImage="//src/img/cloth4.jpg" ProductCost="500" ProductLink="(url перехода на страницу товара)"/>
+  
+</Products>

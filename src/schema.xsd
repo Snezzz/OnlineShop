@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Products">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Product" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:integer"/>
+                            <xs:element name="ProductName" type="xs:string"/>
+                            <xs:element name="ProductImage" type="xs:string"/>
+                            <xs:element name="PoductCost" type="xs:integer"/>
+                            <xs:element name="ProductLink" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema >

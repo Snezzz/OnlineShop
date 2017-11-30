@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Products>
+    <Product>
+        <Id>4322331</Id>
+        <ProductName>Синяя толстовка</ProductName>
+        <ProductImage>/src/img/cloth1.jpg</ProductImage>
+        <ProductCost>400</ProductCost>
+        <ProductLink>(url перехода на страницу товара)</ProductLink>
+    </Product>
+    <Product>
+        <Id>4322332</Id>
+        <ProductName>Корраловый джемпер</ProductName>
+        <ProductImage>/src/img/cloth2.jpg</ProductImage>
+        <ProductCost>600</ProductCost>
+        <ProductLink>(url перехода на страницу товара)/</ProductLink>
+    </Product>
+    <Product>
+        <Id>4322333</Id>
+        <ProductName>Джемпер в полоску</ProductName>
+        <ProductImage>/src/img/cloth3.jpg</ProductImage>
+        <ProductCost>750</ProductCost>
+        <ProductLink>(url перехода на страницу товара)/</ProductLink>
+    </Product>
+    <Product>
+        <Id>4322334</Id>
+        <ProductName>Синий джемпер</ProductName>
+        <ProductImage>/src/img/cloth4.jpg</ProductImage>
+        <ProductCost>500</ProductCost>
+        <ProductLink>(url перехода на страницу товара)/</ProductLink>
+    </Product>
+</Products>

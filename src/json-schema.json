@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "patternProperties": {
+        "id": {
+            "type": "integer"
+        },
+        "ProductName": {
+            "type": "string"
+        },
+        "ProductImage": {
+            "type": "string"
+        },
+        "ProductCost": {
+            "type": "integer"
+        },
+        "ProductLink": {
+            "type": "string"
+        }
+    }
+}

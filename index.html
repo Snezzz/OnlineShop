@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Example</title>
+        <link rel="stylesheet" href="src/css/main.css">
+        <script src="src/js/registration.js"></script>
+        <script src="src/js/main.js"></script>
+        <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+        <script src="http://bootstraptema.ru/snippets/element/2016/maps/custom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="http://www.atlasestateagents.co.uk/css/tether.min.css">
+        <script src="http://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
+    </head>
+    <body>
+
+        <script src="src/js/plugins.js"></script>
+
+        <script src="src/js/bd.js"></script>
+        <div class="container" id="mainpage">
+            <!-- шапка-->
+            <div class="row bl" id="1">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <label class="label label-danger" >Ваш регион <a href="#" style="color:white ">Севастополь?</a></label>
+                </div>
+            </div>
+
+            <div class="row h">
+            <div class="col-xs-3 col-sm-4 col-md-8 col-lg-8 col-xl-9">
+
+            </div>
+                <!-- вход в систему-->
+                <div class="col-xs-9 col-sm-8 col-md-4 col-lg-4 col-xl-3">
+                    <form method="get" action="" id="full" onsubmit="return false">
+                        <div class="form-group">
+                            <label for="mail">UserName:</label>
+                            <input type="email" name="email" id="mail" placeholder="st****@mail.ru">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" value="" id="password" placeholder="******">
+
+                        </div>
+                        <div class="forg">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me
+                        </div>
+                        <div class="forg"><a href="#">Забыли пароль?</a>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-sm" value="Log in" onclick="test(this.form)">
+                        <button id='cl' type="submit" class="btn btn-primary btn-sm ">Registration</button>
+
+                    </form>
+            </div>
+                <div class="col-xs-9 col-sm-8 col-md-4 col-lg-4 col-xl-5 registration">
+                    <form method="post" id="form" onsubmit="return false">
+                        <div class="line">
+                            <div class="labels">
+                                <label for="firstname">Имя:</label><br>
+                                <label for="lastname">Фамилия:</label><br>
+                                <label for="address">Email:</label><br>
+                                <label for="new_password">Пароль:</label><br>
+                                <label for="new_password2">Подтвердить пароль:</label><br>
+                            </div>
+                            <div class="input">
+                                <input type="text" id="firstname"><br>
+                                <input type="text" id="lastname"><br>
+                                <input type="text" id="address"><br>
+                                <input type="password" id="new_password"><br>
+                                <input type="password" id="new_password2"><br>
+                            </div>
+                        </div>
+                        <button class="send" onclick="registration()">Зарегистрироваться</button>
+                    </form>
+                </div>
+
+</div>
+            <!--карусель-->
+            <div  class="row">
+
+                <div id="myCarousel" class="carousel slide " data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="col-lg-4 carousel-item  active">
+                            <img class="im" src="src/img/man.jpg" alt="First slide">
+
+                        </div>
+                        <div class="col-lg-4 carousel-item">
+                            <img class="im" src="src/img/man2.jpg" alt="Second slide">
+                        </div>
+                        <div class="col-lg-4 carousel-item">
+                            <img class="im" src="src/img/man3.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="icon-prev" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="icon-next" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            </div>
+            <!--меню-->
+            <div class="row s" id="menu" >
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+                    <nav class="navbar navbar-light bg-faded" style="padding: .5rem 0rem;">
+                        <ul id="myTab" class="nav navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link" data-toggle="dropdown" href="#" onclick="back()">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " data-toggle="dropdown"  href="#">Каталог</a>
+                                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#" style="color:black">Женская
+                                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#"></a>
+                                            <a class="dropdown-item" href="#"></a>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#"  style="color:black">Мужская</a>
+                                    <a class="dropdown-item" href="#"  style="color:black">Смешанное</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#modal_page" onclick="contacts()">Контакты</a>
+                            </li>
+                            <li class="nav-item click" >
+                                <a class="nav-link" id="c" href="#modal_page" onclick="come()">Личный кабинет</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--поиск-->
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2">
+                    <form class="form-inline pull-xs-right">
+                        <input class="typeahead form-control"  style="width: 177px;" type="text" placeholder="Search" data-sourse="sourse:['audi','time']">
+                        <button class="btn btn-success-outline" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!--ТЕЛО-->
+            <div class="row cont" id="modal_page">
+                 <div class="tab-content">
+                     <div id="panel1" class="tab pane fade  in active">
+                       <div  class="col-xs-1 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                           <label>И ТУТ РЕКЛАМА</label>
+                       </div>
+                         <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xl-8 bgc" >
+                             <div class="row" id="my">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" id="f" >
+                            <a href="#menu" onclick="show()" class="name2">Name 1</a>
+                            <a href="#menu" onclick="show()">
+                    <img src="src/img/cloth1.jpg" class="img big" >
+                            </a>
+                            <a href="#" >
+                    <img src="src/img/cloth1.jpg" class="img small">
+                            </a>
+                            </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" >
+                            <a href="#" class="name1">Name 2</a>
+                            <a href="#">
+                    <img src="src/img/cloth3.jpg" class="img small">
+                                </a>
+                                <a href="#">
+                    <img src="src/img/cloth3.jpg" class="img big">
+                                    </a>
+                            </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" >
+                        <a href="#" class="name1">Name 3</a>
+                        <a href="#">
+                        <img src="src/img/cloth5.jpg" class="img small">
+                            </a>
+                        <a href="#">
+                        <img src="src/img/cloth5.jpg" class="img big">
+                            </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 ">
+                        <a href="#" class="name2">Name 4</a>
+                        <a href="#">
+                        <img src="src/img/cloth4.jpg" class="img big">
+                            </a>
+                        <a href="#">
+                        <img src="src/img/cloth4.jpg" class="img small">
+                            </a>
+                    </div>
+            </div>
+                         </div>
+
+                <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                    <label>ЗДЕСЬ РЕКЛАМА</label>
+                </div>
+                     </div>
+                     <!--ПЕРЕХОД-->
+                     <div  class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                         <nav class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                             <ul id="myTab2" class="pagination" style="position:relative;left:40%">
+                                 <li class="page-item disabled">
+                                     <a class="page-link" href="#" aria-label="Previous">
+                                         <span aria-hidden="true">&laquo;</span>
+                                         <span class="sr-only">Previous</span>
+                                     </a>
+                                 </li>
+                                 <li class="page-item active">
+                                     <a class="page-link" href="#panel1">1 <span class="sr-only">(current)</span></a>
+                                 </li>
+                                 <li class="page-item"><a class="page-link " href="" onclick="next()">2</a></li>
+                                 <li class="page-item"><a class="page-link" href="#page3">3</a></li>
+                                 <li class="page-item"><a class="page-link" href="#page4">4</a></li>
+                                 <li class="page-item"><a class="page-link" href="#page5">5</a></li>
+                                 <li class="page-item">
+                                     <a class="page-link" href="#" aria-label="Next">
+                                         <span aria-hidden="true">&raquo;</span>
+                                         <span class="sr-only">Next</span>
+                                     </a>
+                                 </li>
+                             </ul>
+                         </nav>
+                     </div>
+                 </div>
+            </div>
+            <!--FOOTEER-->
+            <div class="row">
+        <footer id="size">
+
+
+                  <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                      <div><h4>Помощь</h4></div>
+                      <div><a href="#" style="color:black" >Наши партнеры</a></div>
+                      <div><a href="#" style="color:black" >Для чего этот сайт?</a></div>
+                      <div><a href="#" style="color:black" >Как с нами связаться?</a></div>
+                      <div><a href="#" style="color:black" >Как оформить заказ?</a></div>
+                      </div>
+                  <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6 col-xl-6 r">
+                      <div><h4>Мы в соц сетях</h4></div>
+                      <div class="list-group">
+                          <a href="http://www.vk.com" class="list-group-item">vk</a>
+                          <a href="http://www.facebook.com" class="list-group-item">facebook</a>
+                          <a href="http://www.ok.ru" class="list-group-item">Одноклассники</a>
+                          <a href="http://www.instagram.com" class="list-group-item">Instagram</a>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                      <div class="str">
+                        <div><a href="#" style="color:black" >О компании</a></div>
+                          <div><a href="#" style="color:black">Вакансии</a></div>
+                          <div><a href="#" style="color:black" >Связь</a></div>
+                      </div>
+
+                      </div>
+
+
+        </footer>
+    </div>
+        </div>
+        <script>
+
+            $(document).ready(function(){
+                $(".dropdown").on("show.bs.dropdown", function(event){
+                    var x = $(event.relatedTarget).text(); // Get the button text
+                    alert("You clicked on: " + x);
+                });
+            });
+
+            $("#cl").click(function (e) {
+                // e.preventDefault();
+                $("#form").toggle();
+            });
+            $(".click").click(function () {
+                document.getElementById('step').style.color="red";
+            });
+            $("#myTab a").click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+            $("#myTab2 a").click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+            $("#myCarousel").carousel({interval: 6000});
+            $('.typeahead').typeahead({
+                sourse: ['Name','Female', 'Male'],
+                items:3,
+                minLength:1,
+            });
+            function come()
+            {
+                $.ajax({
+                    url: "cabinet.html",
+                    cache: false,
+                    success: function(html){
+                        $("#modal_page").html(html);
+                    }
+                });
+            }
+            function next()
+            {
+                $.ajax({
+                    url: "page.html",
+                    cache: false,
+                    success: function(html){
+                        $("#my").html(html);
+                    }
+                });
+            }
+            function show()
+            {
+                $.ajax({
+                    url: "page2.html",
+                    cache: false,
+                    success: function(html){
+                        $("#my").html(html);
+                    }
+                });
+            }
+            function contacts()
+            {
+                $.ajax({
+                    url: "info.html",
+                    cache: false,
+                    success: function(html){
+                        $("#modal_page").html(html);
+                    }
+                });
+            }
+            function back()
+            {
+                $.ajax({
+                    url: "index.html",
+                    cache: false,
+                    success: function(html){
+                        $("#mainpage").html(html);
+                    }
+                });
+                }
+            function test(form){
+
+                var email=document.getElementById('mail').value;
+                var password=document.getElementById('password').value;
+                var json_email= localStorage.getItem(email); //берем json
+                if ((email=="")||(password=="")) {
+                    alert("введите данные");
+                }
+                else if((json_email===null)){
+                    alert("Проверьте правильность логина/пароль")
+                }
+                else {
+                    var obj = JSON.parse(json_email); //переводим его в объект js
+                    var right_email = obj.email;
+                    var right_password = obj.password;
+                    if (password == right_password) {
+                        alert("success!")
+                        var full = document.getElementById("full");
+                        full.innerHTML = "Добро пожаловать," + obj.name + "<hr> <a href='index.html'>Выйти</a>";
+                        document.body.style.backgroundColor = 'white';
+                        $("#c").css('visibility','visible');
+                        return false;
+
+                    }
+                    else {
+                        alert("Неверный пароль")
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,365 @@
+swagger: '2.0'
+info:
+  title: Online Store
+  description: Lets get it started!
+  version: 1.0.0
+host: page_of_snezzz.surge.sh
+tags:
+  - name: product
+ description: All information about product: name, cost, sizes,colors
+  - name: store
+    description: Access to orders of buyer
+  - name: user
+    description: Operations of user
+schemes:
+ - 
+paths:
+  '/product':
+    post:
+      tags:
+        - product
+      summary: add a new product to the store
+      description: ''
+      operationId: addNewProduct
+      produces:
+        - xml
+        - json
+      parameters:
+        - name: product_id
+          in: path 
+          description: ID of product 
+          required: true
+          type: integer
+          format: int32
+        
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Invalid ID supplied
+        '405':
+          description: Invalid input
+    put:
+      tags:
+        -product
+      summary: update information of product
+      description: ''
+      operationId: updateInf
+      consumes:
+        - json
+        - xml
+      parameters:
+        - in: path
+          name: product_id
+          description: product object that needs to be added to the database
+          required: true
+          schema:
+            $ref: '#jsonSchema.json'
+       
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Product not found
+        '405':
+          description: Validation error
+    delete:
+      tags:
+        - product
+      summary: delete product
+      description: This can only be done by the logged in user as provider.
+      operationId: deleteProduct
+      produces:
+        - xml
+        - json
+      parameters:
+        - name: product_id
+          in: path
+          description: the product to be deleted
+          required: true
+          type: string
+       
+      responses:
+        '400':
+          description: Invalid product id supplied
+        '404':
+          description: Product not found
+ /product/{product_id}:
+    get:
+      tags:
+        - product
+      summary: Find product by id
+      description: 'Returns a single product'
+      operationId: getProductById
+      produces:
+        - xml
+        - json
+      parameters:
+        - in: path
+          name: productId
+          description: Id od product to return
+          required: true
+	  type: integer
+          format: int64
+      responses:
+        200: 
+	  description: successful operation
+	  schema:
+	    $ref:'#/deinitions/product'
+	400:
+          description: invalid Id supplied
+	404:
+          description: Product not found
+/store/inventory:
+    get:
+      tags:
+        - store
+      summary: Returns product inventories by status
+      description: 'Returns a single product'
+      operationId: getInventory
+      produces:
+        - xml
+        - json
+      parameters:[]
+      responses:
+        200: 
+	  description: successful operation
+	  schema:
+	    type: object
+	    additionalProperties:
+			type: integer
+			format: int32
+      security:
+	-api_key:[]
+/store/order/{order_Id}:
+    get:
+      tags:
+        - store
+      summary: Find purchase order by ID
+      description: 
+      operationId: getOrderById
+      produces:
+        - xml
+        - json
+      parameters:
+	  name: order_Id
+          in: path
+          description: ID of product that needs to be fetched
+          required: true
+          type: integer
+	  maximum: 10.0
+	  minimum: 1.0
+          format: int64
+      responses:
+	200: 
+	  description: successful operation
+	  schema:
+	    $ref:'#/deinitions/Order'
+	400:
+          description: invalid ID
+	404:
+          description: order not found!
+  delete:
+      tags:
+        - store
+      summary: Delete order by ID
+      description: 
+      operationId: deleteOrder
+      produces:
+        - xml
+        - json
+      parameters:
+	  name: order_Id
+          in: path
+          description: ID of product that needs to be deleted
+          required: true
+          type: integer
+	  minimum: 1.0
+          format: int64
+      responses:
+	400:
+          description: invalid ID
+	404:
+          description: order not found!
+/store/order:
+    get:
+      tags:
+        - store
+      summary: Place an order 
+      description: 
+      operationId: placeOrder
+      produces:
+        - xml
+        - json
+      parameters:
+	  name: path
+          in: path
+          description: order placed for purchasing the product
+          required: true
+          schema:
+	      $ref: '#/definitions/Order'
+      responses:
+	200: 
+	  description: successful operation
+	  schema:
+	    $ref:'#/deinitions/Order'
+	400:
+          description: invalid order
+      
+/user:
+    post:
+     	tags:
+	  -user
+        summary: Create user
+      description: 'This can only be done by the logged in user'
+      operationId: createUser
+      produces:
+        - xml
+        - json
+      parameters:
+	  name: path
+          in: path
+          description: Created user object
+          required: true
+          schema:
+	      $ref: '#/definitions/User'
+      responses:
+	    default:
+		description: Successful operation
+ /user/create:
+    post:
+      tags:
+        - user
+      summary: Create new user
+      description: ''
+      operationId: createUser
+      consumes:
+        - xml
+        - json
+      parameters:
+        - in: inform
+          name: inform
+          description: Created user object
+          required: true
+          schema:
+            $ref: '#jsonSchema.json'
+      responses:
+        default:
+          description: successful operation
+  /user/login:
+    get:
+      tags:
+        - user
+      summary: logs user into the system
+      description: ''
+      operationId: loginUser
+      produces:
+        - xml
+        - json
+      parameters:
+        - name: email
+          in: path
+          description: The email name 
+          required: true
+          type: string
+        - name: password
+          in: path
+          description: The password 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          
+          headers:
+            X-Rate-Limit:
+              type: integer
+              format: int32
+              description: calls per hour allowed by the user
+            X-Expires-After:
+              type: string
+              format: date-time
+              description: date in UTC when token expires
+        '400':
+          description: Invalid username/password supplied
+ /user/logout:
+    post:
+      tags:
+        - user
+      summary: logs out current logged in user session 
+      description: ''
+      operationId: logoutUser
+      produces:
+        - xml
+        - json
+      parameters: []
+      responses:
+        default:
+          description: successful operation
+'/user/{first_name}':
+    get:
+      tags:
+        - first_name
+      summary: get user by username
+      operationId: getUserByName
+      produces:
+        - xml
+        - json
+      parameters:
+        - name: username
+          in: path
+          description: required username
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid username supplied
+        '404':
+          description: User not found
+    put:
+      tags:
+        - user
+      summary: updated user
+      description: This can only be done by the logged in user.
+      operationId: updateUser
+      produces:
+        - xml
+        - json
+      parameters:
+        - name: username
+          in: path
+          description: name that need to be updated
+          required: true
+          type: string
+        - in: body
+      responses:
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
+    
+    get:
+      tags:
+        - orders
+      summary: get users list of orders
+      description: ''
+      operationId: getUsersOrder
+      produces:
+        - xml
+        - json
+      parameters:
+        - name: user_id
+          in: path
+          description: 'required user_id'
+          required: true
+          type: array
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid user_id supplied
+        '404':
+          description: User not found
+
