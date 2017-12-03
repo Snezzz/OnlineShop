@@ -6,6 +6,7 @@ module.exports = (context, cb) => {
     var month=date.getMonth();
     var today;
     var realmonth;
+
     switch(day){
         case 1: today='Monday'; break;
         case 2: today='Tuesday'; break;
@@ -13,7 +14,7 @@ module.exports = (context, cb) => {
         case 4: today='Thursday'; break;
         case 5: today='Friday'; break;
         case 6: today='Saturday'; break;
-        case 7: today='Sunday'; break;
+        case 0: today='Sunday'; break;
 
     }
     switch(month){
