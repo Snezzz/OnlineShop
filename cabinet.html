@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-xs-3 col-sm-3 col-md-4 col-lg-4 col-xl-4 ">
                 <ul class="list-group">
-                    <a onclick="loadProfile()"><li class="list-group-item">Профиль</li></a>
+                    <a id="prof"><li class="list-group-item">Профиль</li></a>
                     <a onclick="loadSettings()"><li class="list-group-item">Настройки</li></a>
                     <a onclick="loadOrders()"> <li class="list-group-item">Мои заказы</li></a>
                     <a onclick="loadBasket()">  <li class="list-group-item">Корзина</li></a>
@@ -24,6 +24,7 @@
             </div>
         </div>
     </div>
+    <script src="app.js"></script>
 <script>
     function loadProfile(){
         $.ajax({

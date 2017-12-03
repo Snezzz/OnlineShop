@@ -8,22 +8,19 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <p>фото</p>
-            </div>
-            <div class="col-xs-1 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <label for="name">Name:</label><br>
-                <label for="lastname">LastName:</label><br>
-                <label for="mail">mail:</label><br>
-                <label for="phone">Phone:</label><br>
-            </div>
-            <div class="col-xs-1 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                <div id="name"></div>
-                <div id="lastname"></div>
-                <div id="mail"></div>
-                <div id="phone"></div>
+            <div id="profile-view" class="panel panel-default profile-area">
+                <div class="panel-heading"><h3>Profile</h3></div>
+                <div class="panel-body">
+                    <img class="avatar" alt="avatar">
+                    <div>
+                        <label><i class="glyphicon glyphicon-user"></i> Nickname</label>
+                        <h3 class="nickname"></h3>
+                    </div>
+                    <pre class="full-profile"></pre>
                 </div>
+            </div>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="">
     <head>
+        <script src="https://vk.com/js/api/openapi.js?150" type="text/javascript"></script>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Example</title>
@@ -36,55 +37,77 @@
             </div>
 
             <div class="row h">
-            <div class="col-xs-3 col-sm-4 col-md-8 col-lg-8 col-xl-9">
-
+           <div class="col-xs-3 col-sm-4 col-md-8 col-lg-8 col-xl-9">
             </div>
-                <!-- вход в систему-->
                 <div class="col-xs-9 col-sm-8 col-md-4 col-lg-4 col-xl-3">
-                    <form method="get" action="" id="full" onsubmit="return false">
-                        <div class="form-group">
-                            <label for="mail">UserName:</label>
-                            <input type="email" name="email" id="mail" placeholder="st****@mail.ru">
+                    <div>
+                                <a class="navbar-brand" href="#">Auth0 - jQuery</a><br>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" value="" id="password" placeholder="******">
-
-                        </div>
-                        <div class="forg">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me
-                        </div>
-                        <div class="forg"><a href="#">Забыли пароль?</a>
-                        </div>
-                        <input type="submit" class="btn btn-primary btn-sm" value="Log in" onclick="test(this.form)">
-                        <button id='cl' type="submit" class="btn btn-primary btn-sm ">Registration</button>
-
-                    </form>
-            </div>
-                <div class="col-xs-9 col-sm-8 col-md-4 col-lg-4 col-xl-5 registration">
-                    <form method="post" id="form" onsubmit="return false">
-                        <div class="line">
-                            <div class="labels">
-                                <label for="firstname">Имя:</label><br>
-                                <label for="lastname">Фамилия:</label><br>
-                                <label for="address">Email:</label><br>
-                                <label for="new_password">Пароль:</label><br>
-                                <label for="new_password2">Подтвердить пароль:</label><br>
-                            </div>
-                            <div class="input">
-                                <input type="text" id="firstname"><br>
-                                <input type="text" id="lastname"><br>
-                                <input type="text" id="address"><br>
-                                <input type="password" id="new_password"><br>
-                                <input type="password" id="new_password2"><br>
-                            </div>
-                        </div>
-                        <button class="send" onclick="registration()">Зарегистрироваться</button>
-                    </form>
+                    <div>
+                                <button id="btn-home-view" class="btn btn-primary btn-margin">
+                                    Home
+                                </button>
+                               <!-- <button id="btn-profile-view" class="btn btn-primary btn-margin">
+                                    Profile
+                                </button>-->
+                                <button id="btn-login" class="btn btn-primary btn-margin">
+                                    Log In
+                                </button>
+                                <button id="btn-logout" class="btn btn-primary btn-margin">
+                                    Log Out
+                                </button>
+                    </div>
                 </div>
+                        <div id="home-view">
+                            <h4></h4>
+                        </div>
+                </div>
+                <!-- вход в систему-->
+                <!--  <div class="col-xs-9 col-sm-8 col-md-4 col-lg-4 col-xl-3">
+                      <form method="get" action="" id="full" onsubmit="return false">
+                          <div class="form-group">
+                              <label for="mail">UserName:</label>
+                              <input type="email" name="email" id="mail" placeholder="st****@mail.ru">
+                          </div>
+                          <div class="form-group">
+                              <label for="password">Password:</label>
+                              <input type="password" value="" id="password" placeholder="******">
 
-</div>
-            <!--карусель-->
+                          </div>
+                          <div class="forg">
+                              <input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me
+                          </div>
+                          <div class="forg"><a href="#">Забыли пароль?</a>
+                          </div>
+                          <input type="submit" class="btn btn-primary btn-sm" value="Log in" onclick="test(this.form)">
+                          <button id='cl' type="submit" class="btn btn-primary btn-sm ">Registration</button>
+
+                      </form>
+              </div>-->
+                <!--  <div class="col-xs-9 col-sm-8 col-md-4 col-lg-4 col-xl-5 registration">
+                      <form method="post" id="form" onsubmit="return false">
+                          <div class="line">
+                              <div class="labels">
+                                  <label for="firstname">Имя:</label><br>
+                                  <label for="lastname">Фамилия:</label><br>
+                                  <label for="address">Email:</label><br>
+                                  <label for="new_password">Пароль:</label><br>
+                                  <label for="new_password2">Подтвердить пароль:</label><br>
+                              </div>
+                              <div class="input">
+                                  <input type="text" id="firstname"><br>
+                                  <input type="text" id="lastname"><br>
+                                  <input type="text" id="address"><br>
+                                  <input type="password" id="new_password"><br>
+                                  <input type="password" id="new_password2"><br>
+                              </div>
+                          </div>
+                          <button class="send" onclick="registration()">Зарегистрироваться</button>
+                      </form>
+                  </div>
+  -->
+
+              <!--карусель-->
             <div  class="row">
 
                 <div id="myCarousel" class="carousel slide " data-ride="carousel">
@@ -142,7 +165,9 @@
                                 <a class="nav-link" href="#modal_page" onclick="contacts()">Контакты</a>
                             </li>
                             <li class="nav-item click" >
-                                <a class="nav-link" id="c" href="#modal_page" onclick="come()">Личный кабинет</a>
+                                <a id="btn-profile-view" class="nav-link">
+                                    Profile
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -267,24 +292,55 @@
 
 
         </footer>
+
     </div>
+
+            <div id="hello"><div id="inform"></div></div>
+
         </div>
+
+       <!--
+        <div id="vk_auth"></div>
+        <script type="text/javascript">
+            VK.Widgets.Auth('vk_auth', {});
+        </script>-->
+    <script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+    <script type="text/javascript" src="app.js"></script>
         <script>
 
+ function log(){
+     var client_id='6281847';
+     var client_secret='6gUiN0NE00tuTEbI9ALJ';
+     var redirect_uri='http://localhost:63342/web%20С‚РµС…РЅРѕР»РіРёРё/index.html';
+     var url='http://oauth.vk.com/authorize';
+     $.ajax({
+         type:'get',
+         url: "http://oauth.vk.com/authorize?client_id="+client_id+"&redirect_uri="+redirect_uri+"&response_type=code",
+         success: function(html){
+             alert('good');
+         },
+         error: function(request, status, error) {
+             var statusCode = request.status; // вот он код ответа
+             alert(statusCode);
+         }
+     });
+ }
             $(document).ready(function(){
                 $(".dropdown").on("show.bs.dropdown", function(event){
                     var x = $(event.relatedTarget).text(); // Get the button text
                     alert("You clicked on: " + x);
                 });
+                take();
+                takeInfo();
+                setInterval("take();",1000);
+
             });
 
             $("#cl").click(function (e) {
                 // e.preventDefault();
                 $("#form").toggle();
             });
-            $(".click").click(function () {
-                document.getElementById('step').style.color="red";
-            });
+
             $("#myTab a").click(function (e) {
                 e.preventDefault();
                 $(this).tab('show');
@@ -319,6 +375,34 @@
                     }
                 });
             }
+            function takeInfo() {
+                $.ajax({
+                    type:'post',
+                    url: "https://wt-ca8b73a57dd911996388ec8742a26210-0.sandbox.auth0-extend.com/my-service-dev-myfunc",
+                    success: function(data,html){
+                        $('#inform').html('<div class="alert alert-success">'+ data.message +'</div>');
+                    },
+                    error: function(request, status, error) {
+                        var statusCode = request.status; // вот он код ответа
+                        alert(statusCode);
+                    }
+                });
+            }
+            function take() {
+                $.ajax({
+                    type:'post',
+                    url: "https://wt-ca8b73a57dd911996388ec8742a26210-0.sandbox.auth0-extend.com/my-service-dev-main",
+                    success: function(data,html){
+                        $('#hello').html('<div class="alert alert-success">'+ data.message +'</div>');
+                    },
+                    error: function(request, status, error) {
+                        var statusCode = request.status; // вот он код ответа
+                        alert(statusCode);
+                    }
+                });
+            }
+
+
             function show()
             {
                 $.ajax({

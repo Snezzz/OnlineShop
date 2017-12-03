@@ -118,6 +118,7 @@ textarea {
     margin-left:91px;
 }
 
+
 #c{
     visibility: collapse;
 }
@@ -408,4 +409,8 @@ p{
 }
 .help{
     margin-bottom: 20px;
+}
+.login{
+    display: flex;
+    flex-direction: row;
 }
