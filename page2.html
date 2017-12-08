@@ -36,23 +36,6 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 button">
         <img src="src/img/cloth1.jpg" alt="">
 <br>
-                <!-- сюда вставляем оценку - jquery>
-            <!--        <button type="button"  aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                    </button>
-                    <button type="button"  aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" aria-label="Left Align" onclick="back()">
-                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                    </button>
--->
     </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -97,6 +80,35 @@
     </div>
 </div>
 <script>
+
+    $(document).ready(function() {
+        $.ajax({
+            type:'get',
+            url: "https://api.mongolab.com/api/1/databases/mydatabase/collections/products/5a2a8b83734d1d1ee32fb2c4?apiKey=_6BDigQllIiJle4PerntiNKhm2-7vI0I",
+            success: function(database){
+                var inf=$('#table');
+                //var result=JSON.parse(databases);
+                // alert(database.name_of_product[0].name);
+                inf.html("<table>");
+
+                var i=k;
+                var end=k+4;
+                while(k!=end){
+                    // alert("i="+i+"k="+k);
+                    inf.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6" ><tr><td><div class="up"><a onclick="show('+i+')">'+database.name_of_product[i].name +'</a></div><img src="'+database.name_of_product[i].img+'" class="img big" ><img class="img small" src="'+database.name_of_product[i].img+'"</td></tr></div>');
+                    //inf.append(database.name_of_product[i].cost);
+                    //inf.append(database.name_of_product[i].description</td>');
+                    i++;
+                    k++;
+                }
+                inf.append("</table>");
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError+"\r\n"+xhr.statusText+"\r\n"+xhr.responseText);
+            }
+        });
+    });
+
     function basket(){
         $.ajax({
             url: "basket.html",

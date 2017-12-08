@@ -6,6 +6,7 @@ module.exports = (context, cb) => {
     var month=date.getMonth();
     var today;
     var realmonth;
+    var num=+date.getHours();
 
     switch(day){
         case 1: today='Monday'; break;
@@ -32,7 +33,7 @@ module.exports = (context, cb) => {
         case 11:realmonth='декабря'; break;
 
     }
-
-    const message = 'You have connection with serverless. Date:'+today+","+date.getDate()+"e"+" "+realmonth+" "+date.getHours()+" часов "+date.getMinutes()+" минут "+date.getSeconds()+" секунд" ;
+    //Date:'+today+","+date.getDate()+"e"+" "+realmonth+" "+((+date.getHours())+3)+" часов "+date.getMinutes()+" минут "+date.getSeconds()+" секунд"
+    const message = 'You have connection with serverless.'+new Date() ;
     cb(null, { message });
 };

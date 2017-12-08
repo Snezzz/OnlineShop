@@ -138,7 +138,9 @@ textarea {
     position: relative;
     margin-bottom: 24px;
 }
-
+.up{
+    margin-top: 20px;
+}
 .left{
     left:325px;
 }
@@ -146,7 +148,6 @@ textarea {
     height:192px;
     position: relative;
     width:189px;
-    margin-top: 61px;
 }
 #full{
     position: absolute;
@@ -378,7 +379,9 @@ textarea {
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
+#new_product{
+    display: none;
+}
     thead {
         display: table-header-group;
     }
