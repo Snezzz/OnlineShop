@@ -68,7 +68,7 @@
                     </div>
                 </div>
                         <div id="home-view">
-                            <h4></h4>
+                            <h4 id="status"></h4>
                         </div>
                 </div>
                 <!-- вход в систему-->
@@ -203,7 +203,7 @@
                        <div  class="col-xs-1 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                            <label>И ТУТ РЕКЛАМА</label>
                        </div>
-                         <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xl-8 bgc" >
+                         <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xl-8 bgc" id="main_page" >
                              <table id="table">
                                  <tr>
                                      <td></td>
@@ -401,9 +401,9 @@ $("#add_new").on("click",function(){
          }
      });
  }
-
+   var numb;
             $(document).ready(function(){
-
+                numb=1;
                show_products(0);
                 $(".dropdown").on("show.bs.dropdown", function(event){
                     var x = $(event.relatedTarget).text(); // Get the button text
@@ -411,7 +411,7 @@ $("#add_new").on("click",function(){
                 });
                 take();
               //  takeInfo();
-                setInterval("take()",1000);
+                setInterval("take();",1000);
 
             });
 
@@ -532,14 +532,14 @@ $("#add_new").on("click",function(){
                 });
             }
 
-
+var cost;
             function show(id)
             {
                 $.ajax({
                     type:'get',
                     url: "https://api.mongolab.com/api/1/databases/mydatabase/collections/products/5a2a8b83734d1d1ee32fb2c4?apiKey=_6BDigQllIiJle4PerntiNKhm2-7vI0I",
                     success: function(database){
-                        var inf=$('#table');
+                        var inf=$('#main_page');
                         //var result=JSON.parse(databases);
                         // alert(database.name_of_product[0].name);
                         inf.html('<div class="row"><div class="cl">'
@@ -548,22 +548,74 @@ $("#add_new").on("click",function(){
                            ' <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></button></div>'
                            +'<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 left">'+
                             '></div>');
-                        inf.append('<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 button">'+
+                        inf.append('<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 button">'+
                             '<div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 button">'+
                             '<img src="'+database.name_of_product[id].img+'" class="img big" ></div>');
-                        inf.append('<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">'+
-                           '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><div><h2>'+
+                        inf.append('<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">'+
+                           '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h2  style="text-align: center;" id="title">'+
                             database.name_of_product[id].name +'</h2></div>');
-                        inf.append('<div><h3>'+database.name_of_product[id].cost+'</h3></div>');
-                        inf.append(database.name_of_product[id].description);
+                        inf.append('<div><h3 style="text-align: center;">'+database.name_of_product[id].cost+'</h3></div>');
+                        inf.append('<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><div class="card card-inverse card-primary text-xs-center" id="q"><div class="card-block">'+
+                            '<blockquote class="card-blockquote">'+database.name_of_product[id].description+
+                                '</blockquote></div></div></div>');
 
+
+                        inf.append('<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="margin-bottom: 20px;"><p style="position: absolute"> Размер</p>'+
+                            '<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"' +
+                            ' aria-haspopup="true" aria-expanded="false" id="size_of_product">42'+
+                            '</button><div class="dropdown-menu " aria-labelledby="dropdownMenuButton">' +
+                            '<a class="dropdown-item" href="#">'+database.name_of_product[id].sizes[0].value+'</a>'+
+                            '<a class="dropdown-item" href="#">'+database.name_of_product[id].sizes[1].value+'</a>'+
+                            '</div></div>');
+                        inf.append('<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="margin-bottom: 20px;"><p style="position: absolute"> Цвет</p>'+
+                            '<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"' +
+                            ' aria-haspopup="true" aria-expanded="false" id="color">red'+
+                            '</button><div class="dropdown-menu " aria-labelledby="dropdownMenuButton">' +
+                            '<a class="dropdown-item" href="#">'+database.name_of_product[id].colors[0].value+'</a>'+
+                            '<a class="dropdown-item" href="#">'+database.name_of_product[id].colors[1].value+'</a>'+
+                            '</div></div>');
+                        inf.append("<button onclick='add()'>В корзину</button>");
+                        inf.append("<button onclick='send()'>Оформить заказ</button>");
                         inf.append("</div>");
+                        cost=database.name_of_product[id].cost;
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
                         alert(thrownError+"\r\n"+xhr.statusText+"\r\n"+xhr.responseText);
                     }
                 });
             }
+
+
+            function add(){
+
+                var num=numb;
+                var name=document.getElementById('title').innerHTML;
+                var size=document.getElementById('size_of_product').innerHTML;
+                var color=document.getElementById('color').innerHTML;
+                var object={
+                    num: numb,
+                    name: name,
+                    size: size,
+                    color: color,
+                    cost: cost
+                };
+                var toAdd=JSON.stringify(object);
+                localStorage.setItem('product'+numb,toAdd);
+                alert(numb+" товар добавлен в корзину");
+                numb++;
+
+            }
+   function send(){
+       var number=numb;
+       localStorage.setItem('number',number);
+       $.ajax({
+           url: "order.html",
+           success: function(html){
+               $("#main_page").html(html);
+           }
+       });
+       alert("Ваш заказ оформлен");
+   }
             function contacts()
             {
                 $.ajax({

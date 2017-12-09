@@ -118,7 +118,9 @@ textarea {
     margin-left:91px;
 }
 
-
+#q{
+    width:200px;
+}
 #c{
     visibility: collapse;
 }
@@ -145,9 +147,9 @@ textarea {
     left:325px;
 }
 .big{
-    height:192px;
+    height: 210px;
     position: relative;
-    width:189px;
+    width:198px;
 }
 #full{
     position: absolute;

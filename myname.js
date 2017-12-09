@@ -1,5 +1,4 @@
 var myname1=function () {
-
     var value=document.getElementById('name0').innerHTML;
     return value;
 };
@@ -21,9 +20,8 @@ var test=function () {
 };
 
 var for_test=function () {
-    alert("test started");
-    var new_name=document.getElementById('name').value;
-   // alert(new_name);
+    alert("heey");
+    var new_name=document.getElementById('status').innerHTML;
     return new_name;
 };
 
