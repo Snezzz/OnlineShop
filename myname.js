@@ -20,7 +20,7 @@ var test=function () {
 };
 
 var for_test=function () {
-    alert("heey");
+    alert("test finished!");
     var new_name=document.getElementById('status').innerHTML;
     return new_name;
 };
