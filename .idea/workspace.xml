@@ -272,11 +272,11 @@
     <handled-path value="$PROJECT_DIR$/my-service/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1383" />
+    <option name="height" value="785" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -443,19 +443,21 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path" value="$USER_HOME$/Downloads/node" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="SearchEverywhereHistoryKey" value="img&#9;null&#9;null&#10;.col-lg-6&#9;null&#9;null&#10;.carousel-indicators&#9;null&#9;null&#10;carousel-indicators&#9;null&#9;null&#10;slide&#9;null&#9;null&#10;carousel slide&#9;null&#9;null&#10;carousel&#9;null&#9;null&#10;body&#9;null&#9;null&#10;.row&#9;null&#9;null&#10;label&#9;null&#9;null" />
-    <property name="editor.config.accepted" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/online-magazine" />
-    <property name="js.buildTools.gulp.gulp_package_dir" value="C:\Users\Снежа\WebstormProjects\web технолгии\node_modules\gulp" />
-    <property name="nodejs.mocha.mocha_node_package_dir" value="C:\Users\Снежа\WebstormProjects\web технолгии\node_modules\mocha" />
-    <property name="js-jscs-package" value="C:\Users\Снежа\WebstormProjects\web технолгии\node_modules\jscs" />
     <property name="GO_FMT" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="img&#9;null&#9;null&#10;.col-lg-6&#9;null&#9;null&#10;.carousel-indicators&#9;null&#9;null&#10;carousel-indicators&#9;null&#9;null&#10;slide&#9;null&#9;null&#10;carousel slide&#9;null&#9;null&#10;carousel&#9;null&#9;null&#10;body&#9;null&#9;null&#10;.row&#9;null&#9;null&#10;label&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="editor.config.accepted" value="true" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="js-jscs-package" value="C:\Users\Снежа\WebstormProjects\web технолгии\node_modules\jscs" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="C:\Users\Снежа\WebstormProjects\web технолгии\node_modules\gulp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="C:\Users\Снежа\WebstormProjects\web технолгии\node_modules\mocha" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -474,27 +476,9 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="false" name="SpecRunner.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/online_market/node_modules/.bin/SpecRunner.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="SpecRunner.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/online_market/SpecRunner.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="spec\j.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST_FILE</test-kind>
-      <test-file>$PROJECT_DIR$/spec/j.js</test-file>
-      <method />
-    </configuration>
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/online_market/index.html">
-      <method />
-    </configuration>
+    <configuration name="SpecRunner.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/online_market/SpecRunner.html" />
+    <configuration name="SpecRunner.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/online_market/node_modules/.bin/SpecRunner.html" />
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/online_market/index.html" />
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -539,15 +523,6 @@
       <option name="filePath" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
@@ -568,22 +543,37 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.SpecRunner.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.SpecRunner.html (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Mocha.spec\j.js" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="false" name="spec\j.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/spec/j.js</test-file>
+      <method />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.SpecRunner.html" />
+      <item itemvalue="JavaScript Debug.SpecRunner.html (1)" />
+      <item itemvalue="JavaScript Debug.index.html" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.SpecRunner.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Mocha.spec\j.js" />
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.SpecRunner.html (1)" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
